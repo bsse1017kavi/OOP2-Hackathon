@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="260.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="serverPackage.Database">
+   <children>
+      <Text layoutX="80.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="usernaeme" />
+      <Text layoutX="80.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" />
+      <TextField fx:id="tx1" layoutX="174.0" layoutY="74.0" />
+      <PasswordField fx:id="tx2" layoutX="174.0" layoutY="145.0" />
+      <Button layoutX="160.0" layoutY="201.0" mnemonicParsing="false" onAction="#addAdmin" text="Submit" />
+   </children>
+</AnchorPane>

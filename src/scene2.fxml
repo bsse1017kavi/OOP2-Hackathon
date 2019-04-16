@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="596.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="serverPackage.Database">
+   <children>
+      <Text layoutX="254.0" layoutY="42.0" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Info" />
+      <Text layoutX="38.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="309.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Father's name" />
+      <Text layoutX="35.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mother's name" />
+      <Text layoutX="42.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text layoutX="235.0" layoutY="265.0" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Academic Info" />
+      <Text layoutX="45.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll" />
+      <Text layoutX="43.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration No" />
+      <Text layoutX="303.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cgpa" />
+      <Text layoutX="240.0" layoutY="372.0" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank Account" />
+      <Text layoutX="47.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account no" />
+      <Text layoutX="383.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance" />
+      <TextField fx:id="tf1" layoutX="114.0" layoutY="76.0" />
+      <TextField fx:id="tf4" layoutX="137.0" layoutY="192.0" />
+      <TextField fx:id="tf3" layoutX="147.0" layoutY="125.0" />
+      <TextField fx:id="tf5" layoutX="93.0" layoutY="287.0" prefHeight="16.0" prefWidth="109.0" />
+      <TextField fx:id="tf6" layoutX="165.0" layoutY="326.0" prefHeight="16.0" prefWidth="109.0" />
+      <TextField fx:id="tf7" layoutX="354.0" layoutY="282.0" prefHeight="16.0" prefWidth="109.0" />
+      <TextField fx:id="tf8" layoutX="128.0" layoutY="388.0" />
+      <TextField fx:id="tf9" layoutX="443.0" layoutY="387.0" prefHeight="16.0" prefWidth="109.0" />
+      <TextField fx:id="tf2" layoutX="410.0" layoutY="74.0" />
+      <Button layoutX="265.0" layoutY="547.0" mnemonicParsing="false" text="Submit" />
+      <Text layoutX="243.0" layoutY="469.0" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="User Info" />
+      <Text layoutX="44.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username" />
+      <Text layoutX="316.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" />
+      <TextField fx:id="tf10" layoutX="117.0" layoutY="505.0" />
+      <PasswordField fx:id="tf11" layoutX="390.0" layoutY="505.0" />
+   </children>
+</AnchorPane>
