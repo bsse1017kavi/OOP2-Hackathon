@@ -38,4 +38,10 @@ public class Academic
                 ", cgpa=" + cgpa +
                 '}';
     }
+
+    public Academic(String roll, String reg, double cgpa) {
+        this.roll = roll;
+        this.reg = reg;
+        this.cgpa = cgpa;
+    }
 }

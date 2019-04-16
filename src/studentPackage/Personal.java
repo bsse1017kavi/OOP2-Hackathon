@@ -48,4 +48,11 @@ public class Personal
                 ", address='" + address + '\'' +
                 '}';
     }
+
+    public Personal(String name, String fName, String mName, String address) {
+        this.name = name;
+        this.fName = fName;
+        this.mName = mName;
+        this.address = address;
+    }
 }

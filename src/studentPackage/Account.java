@@ -17,4 +17,9 @@ public class Account
     {
         if(amount>0) balance+=amount;
     }
+
+    public Account(String accountNo, double balance) {
+        this.accountNo = accountNo;
+        this.balance = balance;
+    }
 }
