@@ -16,13 +16,13 @@ public class Test_File {
 
     private String FILENAME = "academic.txt";
 
-    public void  writeToFile_BufferWriter() {
+    public void  writeToFile_BufferWriter(String string) {
         BufferedWriter bw = null;
         FileWriter fw = null;
 
         try {
 
-            String content = JOptionPane.showInputDialog("Write about BSSE08");
+            //String content = JOptionPane.showInputDialog("Write about BSSE08");
 
             //open filewriter as write mode
             fw = new FileWriter(FILENAME);
@@ -34,9 +34,9 @@ public class Test_File {
             bw = new BufferedWriter(fw);
             bw.flush();
 
-            bw.write(content);
+            bw.write(string);
 
-            System.out.println("Write Done" + content);
+            System.out.println("Write Done" + string);
 
             if (bw != null)
                 bw.close();
@@ -49,7 +49,7 @@ public class Test_File {
         }
     }
 
-   
+
 
     public void listOfDirectory() {
         File file = null;

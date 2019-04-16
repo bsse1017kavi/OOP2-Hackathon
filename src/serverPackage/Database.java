@@ -37,7 +37,7 @@ public class Database
 
     @FXML PasswordField tf11;
 
-    private ArrayList<Student> students = new ArrayList<>();
+    private static ArrayList<Student> students = new ArrayList<>();
     private static ArrayList<Admin> admins = new ArrayList<>();
 
     private static boolean  hasAdminAccess;
@@ -52,7 +52,7 @@ public class Database
         return students;
     }
 
-    public void createStudent()
+    public void createStudent(ActionEvent e)throws IOException
     {
        if(hasAdminAccess)
        {
@@ -98,6 +98,13 @@ public class Database
        }
 
         System.out.println("OK");
+
+        Parent root0 = FXMLLoader.load(getClass().getResource("/scene0.fxml"));
+        Scene scene0 = new Scene(root0);
+
+        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        window.setScene(scene0);
+        window.show();
     }
 
     @FXML
@@ -190,9 +197,25 @@ public class Database
     }
 
     @FXML
-    public void logIn(ActionEvent e) throws IOException
+    public void logInAsAdmin(ActionEvent e) throws IOException
     {
         Parent root1b = FXMLLoader.load(getClass().getResource("/scene1b.fxml"));
+        Scene scene1b = new Scene(root1b);
+
+        for(Admin admin1:admins)
+        {
+            System.out.println(admin1.getUsername());
+        }
+
+        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        window.setScene(scene1b);
+        window.show();
+    }
+
+    @FXML
+    public void logInAsStudent(ActionEvent e) throws IOException
+    {
+        Parent root1b = FXMLLoader.load(getClass().getResource("/scene1c.fxml"));
         Scene scene1b = new Scene(root1b);
 
         for(Admin admin1:admins)
