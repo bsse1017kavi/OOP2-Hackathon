@@ -37,7 +37,7 @@ public class Database
 
     @FXML PasswordField tf11;
 
-    private static ArrayList<Student> students = new ArrayList<>();
+    private ArrayList<Student> students = new ArrayList<>();
     private static ArrayList<Admin> admins = new ArrayList<>();
 
     private static boolean  hasAdminAccess;

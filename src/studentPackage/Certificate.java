@@ -26,8 +26,8 @@ public class Certificate
 
     public void createCertificate(Student st)
     {
-        String content = "I herby certify that Mr." +st.getPersonalInfo().getName() +",Son of "+st.getPersonalInfo().getfName()+
-                "\ngot cgpa"+st.getAcademicInfo().getCgpa()+"\nHis conduct was satisfactory.";
+        String content = "I herby certify that Mr. " +st.getPersonalInfo().getName() +",Son of Mr."+st.getPersonalInfo().getfName()+
+                "\ngot cgpa "+st.getAcademicInfo().getCgpa()+"\nHis conduct was satisfactory.";
 
         Test_File test_file = new Test_File();
 
@@ -47,9 +47,10 @@ public class Certificate
 
         for(Student student:students)
         {
-            if(student.getUsername().equals(username) && student.getPassword().equals(password))
+            if(student.getUsername().equals(username) && student.getPassword().equals(password) &&student.getBankAccount().getBalance()>1000)
             {
                 st = student;
+                st.getBankAccount().withdraw(1000);
                 break;
             }
         }

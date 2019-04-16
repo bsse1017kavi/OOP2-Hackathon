@@ -36,7 +36,7 @@ public class Test_File {
 
             bw.write(string);
 
-            System.out.println("Write Done" + string);
+            //System.out.println("Write Done" + string);
 
             if (bw != null)
                 bw.close();

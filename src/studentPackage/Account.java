@@ -1,6 +1,8 @@
 package studentPackage;
 
-public class Account
+import java.io.Serializable;
+
+public class Account implements Serializable
 {
     private String accountNo;
     private double balance;
@@ -21,5 +23,9 @@ public class Account
     public Account(String accountNo, double balance) {
         this.accountNo = accountNo;
         this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }

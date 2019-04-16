@@ -1,6 +1,8 @@
 package studentPackage;
 
-public class Academic
+import java.io.Serializable;
+
+public class Academic implements Serializable
 {
     private String roll;
     private String reg;

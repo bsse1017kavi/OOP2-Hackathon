@@ -33,4 +33,8 @@ public class Student implements Serializable
     public String getPassword() {
         return password;
     }
+
+    public Account getBankAccount() {
+        return bankAccount;
+    }
 }

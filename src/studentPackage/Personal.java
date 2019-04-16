@@ -1,6 +1,8 @@
 package studentPackage;
 
-public class Personal
+import java.io.Serializable;
+
+public class Personal implements Serializable
 {
     private String name;
     private String fName;
