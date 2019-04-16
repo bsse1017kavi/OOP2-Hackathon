@@ -38,9 +38,9 @@ public class Database
     @FXML PasswordField tf11;
 
     private ArrayList<Student> students = new ArrayList<>();
-    private ArrayList<Admin> admins = new ArrayList<>();
+    private static ArrayList<Admin> admins = new ArrayList<>();
 
-    private boolean hasAdminAccess;
+    private static boolean  hasAdminAccess;
 
     public void addAccount(Student student)
     {
@@ -48,9 +48,13 @@ public class Database
         System.out.println("Successfully added");
     }
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
     public void createStudent()
     {
-       if(true)
+       if(hasAdminAccess)
        {
            //Personal info
            String s1,s2,s3,s4;
@@ -88,9 +92,15 @@ public class Database
            Student student = new Student(personal,academic,account,s1,s2);
 
            addAccount(student);
+           Serialize_IO serializeIo = new Serialize_IO();
+           serializeIo.writeSerializeListObject(students);
+           System.out.println("SI");
        }
+
+        System.out.println("OK");
     }
 
+    @FXML
     public void addAdmin(ActionEvent e) throws IOException
     {
         String username = tx1.getText();
@@ -99,28 +109,99 @@ public class Database
         admins.add(admin);
         System.out.println("Added");
 
-        Parent root2 = FXMLLoader.load(getClass().getResource("/scene2.fxml"));
-        Scene scene2 = new Scene(root2);
+        for(Admin admin1:admins)
+        {
+            System.out.println(admin1.getUsername());
+        }
+
+        Parent root0 = FXMLLoader.load(getClass().getResource("/scene0.fxml"));
+        Scene scene0 = new Scene(root0);
 
         Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
-        window.setScene(scene2);
+        window.setScene(scene0);
         window.show();
     }
 
-    public void checkAdmin(String username,String password)
+    public ArrayList<Admin> getAdmins() {
+        return admins;
+    }
+
+    public boolean HasAdminAccess() {
+        return hasAdminAccess;
+    }
+
+    public void setAdmins(ArrayList<Admin> admins) {
+        this.admins = admins;
+    }
+
+    public void setHasAdminAccess(boolean hasAdminAccess) {
+        this.hasAdminAccess = hasAdminAccess;
+    }
+
+    @FXML
+    public void checkAdmin(ActionEvent e) throws IOException
     {
+        String username = tx1.getText();
+        String password = tx2.getText();
+        System.out.println(password);
+        boolean chk = false;
+
         for(Admin admin:admins)
         {
-            if(admin.getUsername().equals(username) && admin.password.equals(password))
+            System.out.println(admin.getUsername());
+
+            if(admin.getUsername().equals(username) && admin.getPassword().equals(password))
             {
                 hasAdminAccess = true;
                 System.out.println("Admin access given");
-                return;
+                chk = true;
+                break;
             }
+
+
         }
 
-        System.out.println("No such Account found");
+        if(!chk)
+        {
+            hasAdminAccess=false;
+            System.out.println("No such Account found");
+        }
 
-        return;
+        Parent root0 = FXMLLoader.load(getClass().getResource("/scene2.fxml"));
+        Scene scene0 = new Scene(root0);
+
+        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        window.setScene(scene0);
+        window.show();
+
+        //return;
+
+    }
+
+    @FXML
+    public void signUp(ActionEvent e) throws IOException
+    {
+        Parent root1 = FXMLLoader.load(getClass().getResource("/scene1.fxml"));
+        Scene scene1 = new Scene(root1);
+
+        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        window.setScene(scene1);
+        window.show();
+    }
+
+    @FXML
+    public void logIn(ActionEvent e) throws IOException
+    {
+        Parent root1b = FXMLLoader.load(getClass().getResource("/scene1b.fxml"));
+        Scene scene1b = new Scene(root1b);
+
+        for(Admin admin1:admins)
+        {
+            System.out.println(admin1.getUsername());
+        }
+
+        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        window.setScene(scene1b);
+        window.show();
     }
 }

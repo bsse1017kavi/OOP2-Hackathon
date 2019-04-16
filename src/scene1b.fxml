@@ -13,6 +13,6 @@
       <Text layoutX="80.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" />
       <TextField fx:id="tx1" layoutX="174.0" layoutY="74.0" />
       <PasswordField fx:id="tx2" layoutX="174.0" layoutY="145.0" />
-      <Button layoutX="160.0" layoutY="201.0" mnemonicParsing="false" onAction="#addAdmin" text="Submit" />
+      <Button layoutX="160.0" layoutY="201.0" mnemonicParsing="false" onAction="#checkAdmin" text="Submit" />
    </children>
 </AnchorPane>
